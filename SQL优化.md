@@ -121,7 +121,7 @@ For n_rows a in A do
 *** mysql> ```explain``` select * from k_msong a,k_song b where a.songname=b.songname; ***
 
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra | 
-| -- | --- | --- |------| --- | ---- | ----- | ------------ | ------ | -- |
+| :---- | :---- | :---- | :------ | :---- | :---- | :----- | :------ | :---- | :---- |
 | 1 | SIMPLE | a | ALL | NULL   | NULL  |       NULL | NULL | 540208 |  |
 | 1 | SIMPLE | b | ref | songname_Index | songname_Index | 303 | a.songname | 1 | Using where |
 
@@ -220,7 +220,7 @@ left join (select id,name from t_demand_type) as f on e.dtid=f.id ;
 ***对应的执行计划：***
 
 | id | select_type | table | type | possible_keys | key | key_len | ref | rows | Extra |
-|--|---|----|----|----|----|-------|----|------|-----|
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
 | 1 | PRIMARY | ```<derived2>``` | ALL | NULL | NULL | NULL | NULL |4749 | | 
 | 1 | PRIMARY | ```<derived7>``` | ALL | NULL | NULL | NULL | NULL | 343 | | 
 | 7 | DERIVED  | t_demand_type | ALL | NULL | NULL | NULL | NULL | 343 | | 
@@ -243,7 +243,7 @@ left join (select id,name from t_demand_type) as f on e.dtid=f.id ;
 * 相应的判断标准
 
 | id | 标准 | 
-| -- | -- |
+| :---- | :---- |
 | 1 | 尽可能减少数据流程中需要```处理的数据量```,需要```关联的表数量```,废弃```不必存在的判断逻辑```,减少```不必要的列值的读取``` (即便不是最终反馈的列 ) | 
 | 2 | 撤销不必要的 DISTINCT , 不必要的 UNION |
 
@@ -258,7 +258,7 @@ left join (select id,name from t_demand_type) as f on e.dtid=f.id ;
 * 相应的判断标准
 
 | id | 标准 |
-| -- | -- | 
+| :---- | :---- |
 | 1 | 是否做到小表驱动大表,确切的说是小数据集驱动大数据集 |
 | 2| 是否做到高选择性条件是否给了驱动表,即便可能有别的写法 |
 | 3| 独立子查询 IN 写法是否可能出现异常 ,导致关联子查询,<br>写法是否已规避 ,关联子查询 是否可以改写为非关联子查询 |
