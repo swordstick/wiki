@@ -1,5 +1,5 @@
 ## 前言
-***
+
 
 * 本文关注点为普通的业务实用,不涉及解析器的具体实现算法
 * 本文只讨论SQL优化，不涉及DB实例优化，线程优化
@@ -8,7 +8,7 @@
 
 
 ## 正文内容简介
-***
+
 
 * SQL优化关键性理论知识
 * MYSQL中执行计划阅读
@@ -17,7 +17,7 @@
 
 
 ## SQL优化关键性理论知识
-***
+
 
 ### 何为逻辑查询和物理查询
 
@@ -109,7 +109,7 @@ For n_rows a in A do
 
 ## MYSQL中执行计划阅读
 
-***
+
 
 > SQL的性能主要取决于物理查询<br>
 > 物理查询由执行计划决定，所以执行计划的阅读和分析就是重中之中
@@ -234,7 +234,7 @@ left join (select id,name from t_demand_type) as f on e.dtid=f.id ;
 
 
 ## SQL优化常用流程
-***
+
 
 ### 1. 简化SQL写法
 
@@ -286,7 +286,7 @@ left join (select id,name from t_demand_type) as f on e.dtid=f.id ;
 
 <br><br><br><br><br><br><br><br>
 ## 附录
-***
+
 
 ### 索引何时不可用
 
